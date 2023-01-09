@@ -4,17 +4,20 @@ if global.startGame
 {
 	if keyboard_check_pressed(vk_right)
 	{
-		global.ballSpeed += .25;
+		global.ballSpeed += .05;
 	}
 	if keyboard_check_pressed(vk_left)
 	{
-		global.ballSpeed -= .25;
+		global.ballSpeed -= .05;
 	}
 	if keyboard_check_pressed(vk_space)
 	{
 		global.startGame = false;
 		room_goto_next();
 	}
+	//global.startGame = false;
+	//alarm[0] = room_speed;
+	
 }
 		
 
