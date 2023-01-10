@@ -7,3 +7,5 @@ dragStartY = -1;
 dragStopX = -1;
 dragStopY = -1;
 myNumber = 1;
+
+

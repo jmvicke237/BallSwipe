@@ -1,3 +1,3 @@
 /// @desc ???
-direction = -direction + 180;
+move_bounce_solid(true);
 

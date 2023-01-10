@@ -1,37 +1,27 @@
 /// @desc ???
 event_inherited();
-if place_meeting(x,y,oBallGreen)
+if mouse_check_button_pressed(mb_left)
 {
-	myPartner = instance_place(x,y,oBallGreen)
-	if myPartner.myNumber == myNumber
+	mouse_check = instance_position(mouse_x, mouse_y,oBall)
+	if mouse_check == id
 	{
-		with (myPartner)
-		{
-			instance_destroy();
-		}
-		myNumber *= 2;
-		global.score += myNumber;
-		var foundSpawn = false;
-		while !foundSpawn
-		{
-			var spawnX = random_range(0 + 130, room_width - 130);
-			var spawnY = random_range(0 + 130, room_height - 130);
-			var area = instance_create_depth(spawnX, spawnY,0,oAreaCheck);
-			with (area)
-			{
-				if place_empty(spawnX, spawnY)
-				{
-					foundSpawn = true;
-					instance_create_depth(spawnX,spawnY,0,oBallGreen);
-					global.ballSpeed += 0.05;
-				}
-			}
-			instance_destroy(oAreaCheck);
-		}
-	} else {
-		direction = point_direction(x, y, -hspeed + x, -vspeed + y);
+		dragging = true;
+		dragStartX = mouse_x;
+		dragStartY = mouse_y;
 	}
 }
+
+if mouse_check_button_released(mb_left)
+{
+	if dragging
+	{
+		dragStopX = mouse_x;
+		dragStopY = mouse_y;
+		direction = point_direction(dragStartX, dragStartY, dragStopX, dragStopY);
+	}
+	dragging = false;
+}
+	
 
 
 

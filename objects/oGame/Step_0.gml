@@ -21,12 +21,11 @@ if global.startGame
 if global.lives <= 0
 {
 	global.endGame = true;
+	global.lives = 1;
+	room_goto_next();
+	
 }
 
-if global.endGame {
-	global.endGame = false;
-	room_goto_next();
-}
 
 if keyboard_check_pressed(ord("R"))
 {

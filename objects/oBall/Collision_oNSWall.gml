@@ -1,3 +1,3 @@
 /// @desc ???
-direction = -direction;
-
+//direction = -direction;
+move_bounce_solid(true);
