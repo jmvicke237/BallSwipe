@@ -1,4 +1,5 @@
 /// @desc ???
+speed = global.ballSpeed;
 if mouse_check_button_pressed(mb_left)
 {
 	mouse_check = instance_position(mouse_x, mouse_y,oBall)
@@ -20,3 +21,6 @@ if mouse_check_button_released(mb_left)
 	}
 	dragging = false;
 }
+
+
+		

@@ -1,4 +1,7 @@
 /// @desc ???
-room_goto_next();
+show_debug_message("Foo");
+scrInitRedSpawn();
+currentRedBalls++;
+readyToSpawn = true;
 
 

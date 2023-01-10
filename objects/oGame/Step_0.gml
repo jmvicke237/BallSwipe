@@ -15,19 +15,31 @@ if global.startGame
 		global.startGame = false;
 		room_goto_next();
 	}
-	//global.startGame = false;
-	//alarm[0] = room_speed;
 	
 }
-		
+
+if global.lives <= 0
+{
+	global.endGame = true;
+}
 
 if global.endGame {
-	instance_deactivate_all(true);
+	global.endGame = false;
+	room_goto_next();
 }
 
 if keyboard_check_pressed(ord("R"))
 {
 	game_restart();
+}
+
+if room == PlayRoom && readyToSpawn
+{
+	if currentRedBalls < global.redBalls
+	{
+		readyToSpawn = false;
+		alarm[0] = room_speed * 5;
+	}
 }
 		
 		

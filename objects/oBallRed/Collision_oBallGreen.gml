@@ -1,2 +1,2 @@
 /// @desc ???
-global.endGame = true;
+global.lives -= 1;

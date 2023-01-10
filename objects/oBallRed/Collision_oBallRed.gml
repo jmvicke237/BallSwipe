@@ -1,0 +1,5 @@
+/// @desc ???
+global.endGame = true;
+
+
+
